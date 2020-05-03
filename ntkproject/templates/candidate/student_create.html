@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+	<h2>Студентам и выпускникам</h2>
+	<p class="lead">
+		Мы выбираем перспективных студентов и помогаем им получить практические навыки.
+	</p>
+</div>
+<div>
+	
+<form method="POST" class="needs-validation">
+	{% csrf_token %}
+	<fieldset class="container">
+		<h4 class="mb-3">Основные данные</h4>
+		<div class="form-row"> <!-- тут ФИО -->
+			<div class="col-md-4 mb-3">
+            	<label>Фамилия</label>
+            	{{ form.last_name }}  
+        	</div>
+        	<div class="col-md-4 mb-3">
+            	<label>Имя</label>
+            	{{ form.first_name }}  
+        	</div>
+        	<div class="col-md-4 mb-3">
+            	<label>Отчество</label>
+            	{{ form.middle_name }}  
+        	</div>	
+		</div>
+		<div class="form-row"> <!-- тут Дата рождения -->
+			<div class="col-md-1.5 mb-3">
+				<label>Пол</label>
+				{{ form.gender }}
+			</div>
+			<div class="col-md-2.5 mb-3">
+				<label>Дата рождения</label>
+				{{ form.date_birth }}
+			</div>
+		</div>
+		<hr class="mb-3">
+		<h4 class="mb-3">Контактные данные</h4>
+		<div class="form-row"><!-- тут Контакты -->
+			<div class="col-md-3 mb-3">
+				<label>E-mail</label>
+				{{ form.email }}
+			</div>
+			<div class="col-md-2 mb-3">
+				<label>Телефон</label>
+				{{ form.telephone }}
+			</div>
+		</div>
+		<hr class="mb-3">
+		<h4 class="mb-3">Сведения об образовании</h4>
+		<div class="form-row"> <!-- тут Образование -->
+			<div class="col-md-12 mb-3">
+				<label>Наименование учебного заведения</label>
+				{{ form.university }}
+			</div>
+		</div>
+		<div class="form-row"> <!-- тут Дата рождения -->
+			<div class="col-md-6 mb-3">
+				<label>Факультет, институт</label>
+				{{ form.institute }}
+			</div>
+			<div class="col-md-6 mb-3">
+				<label>Специальность</label>
+				{{ form.specialty }}
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="col-md-3 mb-3">
+				<label>Год поступления</label>
+				{{ form.year_of_begin }}
+			</div>
+			<div class="col-md-3 mb-3">
+				<label>Год окончания</label>
+				{{ form.year_of_end }}
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="col-md-2.5 mb-3">
+				<label>Вы сможете проходить практику полный рабочий день?</label>
+				{{ form.praktika }}
+			</div>
+		</div>
+		<hr class="mb-3">
+	</fieldset>
+	<div class="container">
+		<div class="custom-control custom-checkbox">
+    		<input type="checkbox" class="custom-control-input" id="soglasie" required>
+        	<label class="custom-control-label" for="soglasie">Выражаю свое согласие на обработку персональных данных в соответствии с полным <a href="https://ekaterinburg-tr.gazprom.ru/agreement/">текстом «Согласия»</a>.</label>
+    	</div>
+		<div class="custom-control custom-checkbox">
+    		<input type="checkbox" class="custom-control-input" id="pd" required>
+        	<label class="custom-control-label" for="pd">Подтверждаю, что отправленные мною персональные данные являются достоверными.</a></label>
+    	</div>
+    	<hr class="mb-5">
+    	<div>
+			<input type="submit" class="btn btn-primary btn-lg" value="Отправить">
+		</div>
+	</div>	
+</form>
+	<footer class="footer">
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      </div>
+    </footer>
+</div>
+
+
+{% endblock %}

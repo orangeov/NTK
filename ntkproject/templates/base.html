@@ -1,0 +1,27 @@
+{% load static %}
+<head>
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Карьера в ООО «Газпром трансгаз Екатеринбург»</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"> 
+            <img src="https://ekaterinburg-tr.gazprom.ru/d/settingsgeneral/01/1/logo.png" class="p-2 text-dark">
+            <h5 class="my-0 mr-md-auto font-weight-normal"></h5>
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 text-dark" href="/">Карьера</a>                                     
+                <a class="p-2 text-dark" href="/professional">Профессионалам</a>
+                <a class="p-2 text-dark" href="/student">Студентам и выпускникам</a>
+            </nav>
+                
+                <a class="btn btn-outline-primary" href="/admin">Вход</a>
+</header>
+<body class="bg-light">
+    <div class="container">
+        
+            {% block content %}
+            {% endblock %}
+        
+    </div>
+</body>

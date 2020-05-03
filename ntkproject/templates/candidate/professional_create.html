@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+	<h2>Профессионалам</h2>
+	<p class="lead">
+		Начните свою карьеру в «Газпроме» прямо сейчас. Заполните анкету.
+	</p>
+</div>
+<div>
+	
+<form method="POST" class="needs-validation" enctype="multipart/form-data">
+	{% csrf_token %}
+	<fieldset class="container">
+		<h4 class="mb-3">Основные данные</h4>
+		<div class="form-row"> <!-- тут ФИО -->
+			<div class="col-md-4 mb-3">
+            	<label>Фамилия</label>
+            	{{ form.last_name }}  
+        	</div>
+        	<div class="col-md-4 mb-3">
+            	<label>Имя</label>
+            	{{ form.first_name }}  
+        	</div>
+        	<div class="col-md-4 mb-3">
+            	<label>Отчество</label>
+            	{{ form.middle_name }}  
+        	</div>	
+		</div>
+		<div class="form-row"> <!-- тут Дата рождения -->
+			<div class="col-md-1.5 mb-3">
+				<label>Пол</label>
+				{{ form.gender }}
+			</div>
+			<div class="col-md-2.5 mb-3">
+				<label>Дата рождения</label>
+				{{ form.date_birth }}
+			</div>
+		</div>
+		<div class="form-row"> <!-- тут Адрес проживания -->
+			<div class="col-md-4 mb-3">
+            	<label for="address">Адрес проживания</label>
+            	 {{ form.address }}
+        	</div>
+        	<div class="col-md-2.5 mb-3">
+				<label>Готовность к переезду</label>
+				{{ form.ready_to_move }}
+			</div>
+        </div>
+        <hr class="mb-3">
+        <h4 class="mb-3">Контактные данные</h4>
+		<div class="form-row"><!-- тут Контакты -->
+			<div class="col-md-3 mb-3">
+				<label>E-mail</label>
+				{{ form.email }}
+			</div>
+			<div class="col-md-3 mb-3">
+				<label>Телефон</label>
+				{{ form.telephone }}
+			</div>
+		</div>
+		<hr class="mb-3">
+		<h4 class="mb-3">Сведения об образовании</h4>
+		<div class="form-row"><!-- тут Образование -->
+			<div class="col-md-4 mb-3">
+				<label>Вид образования</label>
+				{{ form.type_education }}
+			</div>
+			<div class="col-md-4 mb-3">
+				<label>Направление</label>
+				{{ form.program }}
+			</div>
+			<div class="col-md-4 mb-3">
+				<label>Квалификация</label>
+				{{ form.qualification }}
+			</div>
+		</div>
+		<hr class="mb-3">
+		<h4 class="mb-3">Желаемая должность</h4>
+		<div class="form-row"><!-- тут о должности -->
+			<div class="col-md-5 mb-3">
+				<label>Направление деятельности:</label>
+				{{ form.work_type }}
+			</div>
+			<div class="col-md-5 mb-3">
+				<label>Должность</label>
+				{{ form.work_post }}
+			</div>
+		</div>
+		<h4 class="mb-3">Резюме</h4>
+		<div class="form-row">
+			<div class="col-md-6 mb-3">
+				<label> Прикрепите файл резюме:</label>
+				{{ form.upload }}
+			</div>
+		</div>
+	</fieldset>
+	<div class="container">
+		<hr class="mb-3">
+		<div class="custom-control custom-checkbox">
+    		<input type="checkbox" class="custom-control-input" id="soglasie" required>
+        	<label class="custom-control-label" for="soglasie">Выражаю свое согласие на обработку персональных данных в соответствии с полным <a href="https://ekaterinburg-tr.gazprom.ru/agreement/">текстом «Согласия»</a>.</label>
+    	</div>
+		<div class="custom-control custom-checkbox">
+    		<input type="checkbox" class="custom-control-input" id="pd" required>
+        	<label class="custom-control-label" for="pd">Подтверждаю, что отправленные мною персональные данные являются достоверными.</a></label>
+    	</div>
+    	<hr class="mb-5">
+    	<div>
+			<input type="submit" class="btn btn-primary btn-lg" value="Отправить">
+		</div>
+	</div>	
+</form>
+	<footer class="footer">
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      </div>
+    </footer>
+</div>
+
+
+{% endblock %}
